@@ -67,4 +67,20 @@ public class HelloRestController {
 //    public String sayHello(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
 //        return "Hello " + firstName + " " + lastName + "!";
 //    }
+
+
+
+
+
+    private static final Logger logger3 = LoggerFactory.getLogger(HelloRestController.class);
+
+    @PutMapping("/put/{firstName}")
+    public String sayHello3(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
+        logger.info("Received request: firstName={}, lastName={}", firstName, lastName);
+
+        String message = "Hello " + firstName + " " + lastName + "!";
+
+        logger.debug("Generated message: {}", message);
+        return message;
+    }
 }
